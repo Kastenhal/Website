@@ -74,7 +74,7 @@ interface ExternalLinkProps {
 
 const NavLink: React.FC<NavLinkProps> = ({ href, icon, label }) => (
   <Link href={href} className="flex items-center gap-2 hover:underline hover:underline-offset-4">
-    <Image className="dark:invert" src={icon} alt={`${label} icon`} width={20} height={20} />
+    <Image className="dark:invert" src={icon} alt={`${label} icon`} width={16} height={16} />
     {label}
   </Link>
 );
@@ -86,6 +86,6 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({ href, icon }) => (
     target="_blank"
     rel="noopener noreferrer"
   >
-    <Image className="dark:invert" src={icon} alt="External link icon" width={20} height={20} />
+    <Image className="dark:invert" src={icon} alt="External link icon" width={16} height={16} />
   </a>
 );
