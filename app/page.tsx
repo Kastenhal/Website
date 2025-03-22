@@ -20,7 +20,7 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <div className="flex flex-col font-[family-name:var(--font-geist-mono)] gap-[10px]">
-          <h1 className="text-xl font-semibold">
+        <h1 className="text-xl font-semibold">
             <Typewriter
               words={["Markus Smith"]}
               cursor={!hideFirstCursor}
@@ -45,83 +45,47 @@ export default function Home() {
           )}
 
           <h2 className="text-base font-light">North Carolina, United States</h2>
-          <div className="flex flex-row gap-[12px] text-base font-light">
-            <Link
-              href="/blog"
-              className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-            >
-              <Image
-                className="dark:invert"
-                src="/globe.svg"
-                alt="Globe icon"
-                width={20}
-                height={20}
-              />
-              Blog
-            </Link>
-
-            <Link
-              href="/resume"
-              className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-            >
-              <Image
-                className="dark:invert"
-                src="/file.svg"
-                alt="File icon"
-                width={20}
-                height={20}
-              />
-              Résumé
-            </Link>
-
-            <Link
-              href="/projects"
-              className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-            >
-              <Image
-                className="dark:invert"
-                src="/window.svg"
-                alt="Window icon"
-                width={20}
-                height={20}
-              />
-              Projects
-            </Link>
+          <div className="flex gap-3 text-base font-light">
+            <NavLink href="/blog" icon="/globe.svg" label="Blog" />
+            <NavLink href="/resume" icon="/file.svg" label="Résumé" />
+            <NavLink href="/projects" icon="/window.svg" label="Projects" />
           </div>
         </div>
       </main>
 
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://github.com/Kastenhal"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            className="dark:invert"
-            src="/github.svg"
-            alt="Github icon"
-            width={20}
-            height={20}
-          />
-        </a>
-
-        <a
-          className="flex item-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://www.linkedin.com/in/markus-smith-504666357/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            className="dark:invert"
-            src="/linkedin.svg"
-            alt="LinkedIn icon"
-            width={20}
-            height={20}
-          />
-        </a>
+        <ExternalLink href="https://github.com/Kastenhal" icon="/github.svg" />
+        <ExternalLink href="https://www.linkedin.com/in/markus-smith-504666357/" icon="/linkedin.svg" />
       </footer>
     </div>
   );
 }
+
+interface NavLinkProps {
+  href: string;
+  icon: string;
+  label: string;
+}
+
+interface ExternalLinkProps {
+  href: string;
+  icon: string;
+}
+
+const NavLink: React.FC<NavLinkProps> = ({ href, icon, label }) => (
+  <Link href={href} className="flex items-center gap-2 hover:underline hover:underline-offset-4">
+    <Image className="dark:invert" src={icon} alt={`${label} icon`} width={20} height={20} />
+    {label}
+  </Link>
+);
+
+const ExternalLink: React.FC<ExternalLinkProps> = ({ href, icon }) => (
+  <a
+    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Image className="dark:invert" src={icon} alt="External link icon" width={20} height={20} />
+  </a>
+);
