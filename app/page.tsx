@@ -56,6 +56,7 @@ export default function Home() {
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <ExternalLink href="https://github.com/Kastenhal" icon="/github.svg" />
         <ExternalLink href="https://www.linkedin.com/in/markus-smith-504666357/" icon="/linkedin.svg" />
+        <ExternalLink href="https://www.youtube.com/@Kastenhal/" icon="/youtube.svg" />
       </footer>
     </div>
   );
