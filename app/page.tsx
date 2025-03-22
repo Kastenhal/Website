@@ -12,7 +12,7 @@ export default function Home() {
     const timer = setTimeout(() => {
       setShowSecondTypewriter(true);
       setHideFirstCursor(true);
-    }, 3500);
+    }, 2250);
     return () => clearTimeout(timer);
   }, []);
 
