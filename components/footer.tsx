@@ -1,5 +1,10 @@
 import Image from "next/image"
 
+interface ExternalNavigatorProps {
+    href: string,
+    icon: string
+}
+
 export function Footer({children}: {children: React.ReactNode}) {
     return(
         <div className="flex flex-row gap-8 grow-0 min-h-16">
@@ -8,7 +13,7 @@ export function Footer({children}: {children: React.ReactNode}) {
     );
 }
 
-export function ExternalNavigator({href, icon}) {
+export function ExternalNavigator({href, icon}: ExternalNavigatorProps) {
     return(
         <a href={href} target="_blank" rel="noopener noreferrer">
             <Image
