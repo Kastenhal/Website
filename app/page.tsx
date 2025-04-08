@@ -1,10 +1,12 @@
+import Link from 'next/link'
+
 import { RootContainer } from "@/components/root_container";
-import { Information, Name, Title, Location } from "@/components/information";
+import { Information, Name, Title, Location, Pages } from "@/components/information";
 import { Footer, ExternalNavigator } from "@/components/footer";
 
 const personal_information = {
   name: "Markus Smith",
-  title: "Full Stack Developer",
+  title: "Software Developer",
   location: "North Carolina, United States"
 }
 
@@ -24,7 +26,7 @@ const youtube = {
   icon: "/youtube.svg"
 }
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <RootContainer>
@@ -32,6 +34,10 @@ export default function Home() {
           <Name>{personal_information.name}</Name>
           <Title>{personal_information.title}</Title>
           <Location>{personal_information.location}</Location>
+          <Pages>
+            <Link className="hover:underline" href="/projects">Projects</Link>
+            <Link className="hover:underline" href="/blog">Blog</Link>
+          </Pages>
         </Information>
         <Footer>
           <ExternalNavigator href={github.link} icon={github.icon}></ExternalNavigator>
