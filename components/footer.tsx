@@ -21,6 +21,7 @@ export function ExternalNavigator({href, icon}: ExternalNavigatorProps) {
                 width={16}
                 height={16}
                 alt="External navigator"
+                className="dark:invert"
             />
         </a>
     )
