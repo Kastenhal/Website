@@ -5,8 +5,8 @@ import { Information, Name, Title, Location, Pages } from "@/components/informat
 import { Footer, ExternalNavigator } from "@/components/footer";
 
 const personal_information = {
-  name: "Markus Smith",
-  title: "Software Developer",
+  name: "Kastenhal Overguard",
+  title: "Software Engineer",
   location: "North Carolina, United States"
 }
 
