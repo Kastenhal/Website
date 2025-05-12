@@ -15,11 +15,6 @@ const github = {
   icon: "/github.svg"
 }
 
-const linkedin = {
-  link: "https://www.linkedin.com/in/markus-smith-504666357/",
-  icon: "/linkedin.svg"
-}
-
 
 const youtube = {
   link: "https://www.youtube.com/@Kastenhal/",
@@ -41,7 +36,6 @@ export default function Page() {
         </Information>
         <Footer>
           <ExternalNavigator href={github.link} icon={github.icon}></ExternalNavigator>
-          <ExternalNavigator href={linkedin.link} icon={linkedin.icon}></ExternalNavigator>
           <ExternalNavigator href={youtube.link} icon={youtube.icon}></ExternalNavigator>
         </Footer>
       </RootContainer>
