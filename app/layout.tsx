@@ -9,7 +9,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Kastenhal Overguard's Portfolio",
-  description: "Presented by Markus Smith."
+  description: "Cogito ergo sum."
 };
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
